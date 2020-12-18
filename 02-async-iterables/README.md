@@ -6,7 +6,6 @@ To make an object iterable asynchronously:
 
 1. Use `Symbol.asyncIterator` instead of `Symbol.iterator`.
 2. The `next()` method should return a promise (to be fulfilled with the next value).
-    - The `async` keyword handles it, we can simply make `async next()`.
 3. To iterate over such an object, we can use a `for await (let item of iterable)` loop.
 
 
