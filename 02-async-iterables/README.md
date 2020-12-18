@@ -11,9 +11,8 @@ To make an object iterable asynchronously:
 
 As a starting example, let's make an iterable `range` object, similar like the one before, but now it will return values asynchronously, one per second.
 
-```js
-{% include_relative hello-async-iterables-2.js %}
-```
+See file [hello-async-iterables-2.js](hello-async-iterables-2.js)
+
 
 As we can see, the structure is similar to regular iterators:
 
