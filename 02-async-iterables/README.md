@@ -26,8 +26,10 @@ As we can see, the structure is similar to regular iterators:
 3. The `next()` method doesn't have to be `async`, 
   - it may be a regular method returning a promise, but `async` allows us to use `await`, so that's convenient. 
 4. To iterate, we use `for await(let value of range)` `(4)`,
-  - namely add "await" after "for". 
+  - namely add "`await`" after "`for`". 
   - The loop calls `range[Symbol.asyncIterator]()` once, and then its `next()` for values.
+
+## Differences between Iterators and Async iterators
 
 Here's a small table with the differences:
 
