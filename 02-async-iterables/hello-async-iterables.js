@@ -39,7 +39,7 @@ const range = {
 };
 
 
-const doItManually = false;
+const doItManually = true;
 
 if (doItManually) {
     /* Iterate manually.
@@ -49,10 +49,7 @@ if (doItManually) {
     function manually() {
         asyncIterator.next().then(r => {
             console.log(r);
-            if (!r.done) {
-                asyncIterator.next();
-                manually();
-            }
+            if (!r.done) manually();
         });
     }
     manually();
