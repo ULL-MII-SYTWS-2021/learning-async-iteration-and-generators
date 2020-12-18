@@ -35,7 +35,11 @@ Here's a small table with the differences:
 
 ##  Iterating Explicitly
 
-We don't have to make `async` the `next`method and we can also iterate explictly. See file 
+We don't have to make `async` the `next`method instead we can explictly return a promise.
+
+We can also iterate explictly. 
+
+See file 
 
 [hello-async-iterables.js](hello-async-iterables.js)
 
@@ -51,3 +55,7 @@ console.log( [...range] ); // Error, no Symbol.iterator
 That's natural, as it expects to find `Symbol.iterator`, not `Symbol.asyncIterator`.
 
 It's also the case for `for..of`: the syntax without `await` needs `Symbol.iterator`.
+
+## See
+
+* [Using Async Iteratkon Directly](https://exploringjs.com/impatient-js/ch_async-iteration.html#using-async-iteration-directly)
