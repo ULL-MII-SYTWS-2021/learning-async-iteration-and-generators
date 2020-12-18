@@ -35,7 +35,7 @@ Here's a small table with the differences:
 
 ##  Iterating Explicitly
 
-We can also iterate explictly. See file 
+We don't have to make `async` the `next`method and we can also iterate explictly. See file 
 
 [hello-async-iterables.js](hello-async-iterables.js)
 
