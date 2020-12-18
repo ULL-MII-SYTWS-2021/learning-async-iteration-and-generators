@@ -33,6 +33,12 @@ Here's a small table with the differences:
 | `next()` return value is              | any value         | `Promise`  |
 | to loop, use                          | `for..of`         | `for await..of` |
 
+##  Iterating Explicitly
+
+We can also iterate explictly. See file 
+
+[hello-async-iterables.js](hello-async-iterables.js)
+
 ## The spread syntax `...` doesn't work asynchronously
 
 Features that require regular, synchronous iterators, don't work with asynchronous ones.
