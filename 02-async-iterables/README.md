@@ -43,6 +43,23 @@ See file
 
 [hello-async-iterables.js](hello-async-iterables.js)
 
+We start calling the `range[Symbol.asyncIterator]()` 
+method to create the async iterator.
+
+After that, we can call it and get a promise. Of course, we  can use the  `.then`, `.catch` and `.finally` methods 
+of the promise:
+
+```js
+let asyncIterator = range[Symbol.asyncIterator]();
+    function manually() {
+        asyncIterator.next().then(r => {
+            console.log(r);
+            if (!r.done) manually();
+        });
+    }
+    manually();
+```
+
 ## The spread syntax `...` doesn't work asynchronously
 
 Features that require regular, synchronous iterators, don't work with asynchronous ones.
