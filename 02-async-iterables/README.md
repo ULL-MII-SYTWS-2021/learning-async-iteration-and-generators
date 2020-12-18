@@ -1,6 +1,10 @@
 # Async Iterables
 
+## Why is useful
+
 Asynchronous iteration is needed when values come asynchronously: after `setTimeout` or another kind of delay. 
+
+## How to make an object iterable asynchronously
 
 To make an object iterable asynchronously:
 
@@ -8,6 +12,7 @@ To make an object iterable asynchronously:
 2. The `next()` method should return a promise (to be fulfilled with the next value).
 3. To iterate over such an object, we can use a `for await (let item of iterable)` loop.
 
+## Example
 
 As a starting example, let's make an iterable `range` object, similar like the one before, but now it will return values asynchronously, one per second.
 
@@ -20,10 +25,9 @@ As we can see, the structure is similar to regular iterators:
 2. This method must return the object with `next()` method returning a promise `(2)`.
 3. The `next()` method doesn't have to be `async`, 
   - it may be a regular method returning a promise, but `async` allows us to use `await`, so that's convenient. 
-  - Here we just delay for a second `(3)`.
 4. To iterate, we use `for await(let value of range)` `(4)`,
   - namely add "await" after "for". 
-  - It calls `range[Symbol.asyncIterator]()` once, and then its `next()` for values.
+  - The loop calls `range[Symbol.asyncIterator]()` once, and then its `next()` for values.
 
 Here's a small table with the differences:
 
