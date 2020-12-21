@@ -4,7 +4,7 @@
   "description": "https://javascript.info/async-iterators-generators",
   "main": "index.js",
   "scripts": {
-    "push": "git ci -am 'confirm' && git push -u origin master:main"
+    "push": "git ci -am 'confirm' && git push -u origin main"
   },
   "repository": {
     "type": "git",

@@ -38,4 +38,4 @@ result = await generator.next(); // result = {value: ..., done: true/false}
 ```
 That's why async generators work with `for await...of`.
 
-See [hello-async-generator-2.js](hello-async-generator-2.js)
+See [hello-async-generator.js](hello-async-generator.js)
