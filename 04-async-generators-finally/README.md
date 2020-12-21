@@ -40,7 +40,7 @@ That's why async generators work with `for await...of`.
 
 See [hello-async-generator.js](hello-async-generator.js)
 
-## You can also for await on sync iterables
+## You can also *for await* on sync iterables
 
 The following code iterates over a synchronous iterable - an array of promises. 
 
