@@ -1,9 +1,16 @@
+#!/usr/bin/env node --no-warnings
+
 'use strict';
+
+process.on('unhandledRejection', (reason, promise) => {
+    console.log(`unhandled rejection; a promise was not being awaited at the time it rejected`)
+})
 
 async function* run() {
   await new Promise(resolve => setTimeout(resolve, 100));
   yield 'Hello';
-  yield ('World');
+  yield 'World';
+  // yield Promise.reject('World');
 }
 
 const asyncIterator = run();
