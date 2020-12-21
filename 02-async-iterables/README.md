@@ -81,4 +81,4 @@ It's also the case for `for..of`: the syntax without `await` needs `Symbol.itera
 
 ## See
 
-* [Using Async Iteratkon Directly](https://exploringjs.com/impatient-js/ch_async-iteration.html#using-async-iteration-directly)
+* [Using Async Iteration Directly](https://exploringjs.com/impatient-js/ch_async-iteration.html#using-async-iteration-directly)
