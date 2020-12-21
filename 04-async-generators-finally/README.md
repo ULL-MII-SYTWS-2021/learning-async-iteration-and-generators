@@ -39,3 +39,43 @@ result = await generator.next(); // result = {value: ..., done: true/false}
 That's why async generators work with `for await...of`.
 
 See [hello-async-generator.js](hello-async-generator.js)
+
+## You can also for await on sync iterables
+
+See [for-await-with-sync.js](for-await-with-sync.js)
+
+## Async iterable range
+
+Regular generators can be used as `Symbol.iterator` to make the iteration code shorter.
+
+Similar to that, async generators can be used as `Symbol.asyncIterator` to implement the asynchronous iteration.
+
+For instance, we can make the `range` object generate values asynchronously, once per second, by replacing synchronous `Symbol.iterator` with asynchronous `Symbol.asyncIterator`:
+
+```js 
+let range = {
+  from: 1,
+  to: 5,
+
+  async *[Symbol.asyncIterator]() {
+    for(let value = this.from; value <= this.to; value++) {
+      await new Promise(resolve => setTimeout(resolve, 1000));
+      yield value;
+    }
+  }
+};
+
+(async () => {
+  for await (let value of range) {
+    console.log(value); // 1, then 2, then 3, then 4, then 5
+  }
+})();
+```
+
+Now values come with a delay of 1 second between them.
+
+Technically, we can add both `Symbol.iterator` and `Symbol.asyncIterator` to the object, so it's both synchronously (`for..of`) and asynchronously (`for await..of`) iterable.
+
+In practice though, that would be a weird thing to do.
+
+
