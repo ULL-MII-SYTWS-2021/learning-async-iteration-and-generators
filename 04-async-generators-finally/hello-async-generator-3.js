@@ -15,5 +15,5 @@ asyncIterator.next().
     asyncIterator.next().then(world => console.log(world))
   }).
   then(() => { 
-    asyncIterator.next().then(world => console.log(world)) // { value: undefined, done: true }
+    asyncIterator.next().then(final => console.log(final)) // { value: undefined, done: true }
   });  
