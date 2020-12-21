@@ -100,6 +100,7 @@ let range = {
 ```
 
 Now values come with a delay of 1 second between them.
+See file [hello-async-iterable-range.js](hello-async-iterable-range.js)
 
 Technically, we can add both `Symbol.iterator` and `Symbol.asyncIterator` to the object, so it's both synchronously (`for..of`) and asynchronously (`for await..of`) iterable.
 
