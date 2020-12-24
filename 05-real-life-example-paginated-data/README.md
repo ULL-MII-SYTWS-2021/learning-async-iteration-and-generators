@@ -14,6 +14,7 @@ Try [https://api.github.com/repos/ULL-MII-SYTWS-1920/ull-mii-sytws-1920.github.i
 
 It responds with a JSON of 30 commits, and also provides a link to the next page in the `Link` header.
 
+
 See this example [get-link-example.js](get-link-example.js)
 When we run it produces:
 
@@ -24,6 +25,8 @@ next:  https://api.github.com/repositories/208814568/commits?page=2
 last:  https://api.github.com/repositories/208814568/commits?page=61
 30
 ```
+
+See [https://developer.mozilla.org/en-US/docs/Web/API/Headers/get](See https://developer.mozilla.org/en-US/docs/Web/API/Headers/get)
 
 We can use the `next` link for the next request, to get more commits, and so on.
 
