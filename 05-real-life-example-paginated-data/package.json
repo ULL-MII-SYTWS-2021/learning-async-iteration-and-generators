@@ -1,0 +1,15 @@
+{
+  "name": "05-real-life-example-paginated-data",
+  "version": "1.0.0",
+  "description": "So far we've seen basic examples, to gain understanding. Now let's review a real-life use case.",
+  "main": "example1.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "node-fetch": "^2.6.1"
+  }
+}
