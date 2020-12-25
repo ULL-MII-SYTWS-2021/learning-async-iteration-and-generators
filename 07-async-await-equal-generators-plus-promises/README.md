@@ -137,7 +137,7 @@ So that, when we run it with the generator above, we obtain:
 8
 ```
 
-Heres is a [solution](example.js):
+Heres is a [solution](example.js)
 
 ## See
 
