@@ -1,6 +1,6 @@
-function doTask1() {
+function doTask1(arg) {
     return new Promise((resolve, reject) => {
-        setTimeout(() => resolve(1), 100)
+        setTimeout(() => resolve(arg), 100)
     })
 }
 
@@ -16,8 +16,8 @@ function doTask3(arg) {
     })
 }
 
-function* init() {
-    const res1 = yield doTask1();
+function* init(arg) {
+    const res1 = yield doTask1(arg);
     console.log(res1);
     
     const res2 = yield doTask2(res1);
@@ -29,8 +29,8 @@ function* init() {
     return res3;
 }
 
-function runner(genFun) {
-   const itr = genFun();
+function runner(genFun, arg) {
+   const itr = genFun(arg);
 
    function run(arg) {
       const result = itr.next(arg);
@@ -44,5 +44,5 @@ function runner(genFun) {
    return run;
 }
 
-const doIt = runner(init);
+const doIt = runner(init, 3);
 doIt();
