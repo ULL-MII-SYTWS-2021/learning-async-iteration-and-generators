@@ -104,7 +104,7 @@ function* init(arg) {
 
 Notice how this generator function resembles our async function!
 
-But this is only half the story. Now we need a way to execute its body. 
+But this is only half the story. Now **we need a way to execute its body**. 
 
 We need a function that can control the iterator of this generator function to 
 
