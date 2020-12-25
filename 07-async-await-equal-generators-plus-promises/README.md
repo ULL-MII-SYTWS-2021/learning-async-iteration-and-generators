@@ -108,7 +108,7 @@ Notice how this generator function resembles our async function!
 
 But this is only half the story. Now **we need a way to execute its body**. 
 
-We need a function `waiter` that can control the iterator of this generator function to "*wait for the fulfillment execution of the promise yielded on each iteration*" 
+We need a function `waiter` that can control the iterator of this generator function to "*wait for the fulfillment of the promise yielded on each iteration*" 
 
 1. Halt every time a promise is yielded and 
 2. proceeds once it resolves (or rejects). 
