@@ -128,7 +128,7 @@ const doIt = waiter(init, 3);
 doIt();
 ```
 
-Now, when we run it, we obtain:
+So that, when we run it with the generator above, we obtain:
 
 ```
 ➜  learning-async-iteration-and-generators git:(main) ✗ node 07-async-await-equal-generators-plus-promises/example.js 
