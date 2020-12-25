@@ -108,21 +108,21 @@ Notice how this generator function resembles our async function!
 
 But this is only half the story. Now **we need a way to execute its body**. 
 
-We need a function that can control the iterator of this generator function to 
+We need a function `waiter` that can control the iterator of this generator function to "*wait for the fulfillment execution of each iteration of the generator*" 
 
 1. Halt every time a promise is yielded and 
 2. proceeds once it resolves (or rejects). 
 
 It sounds complicated, but takes only a few lines to implement.
 
-Write the `runner` function:
+Write the `waiter` function:
 
 ```js
-function runner(genFun, arg) {
+function waiter(genFun, arg) {
    // ... your code here
 }
 
-const doIt = runner(init, 3);
+const doIt = waiter(init, 3);
 doIt();
 ```
 

@@ -29,20 +29,20 @@ function* init(arg) {
     return res3;
 }
 
-function runner(genFun, arg) {
+function waiter(genFun, arg) {
    const itr = genFun(arg);
 
-   function run(arg) {
+   function runAndWait(arg) {
       const result = itr.next(arg);
 
       if (result.done) 
         return result.value;
       else
-        return Promise.resolve(result.value).then(run)
+        return Promise.resolve(result.value).then(runAndWait)
    }
 
-   return run;
+   return runAndWait;
 }
 
-const doIt = runner(init, 3);
+const doIt = waiter(init, 3);
 doIt();
