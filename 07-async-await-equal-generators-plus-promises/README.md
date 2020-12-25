@@ -104,6 +104,8 @@ function* init(arg) {
 
 Notice how this generator function resembles our async function!
 
+## A Function Controlling the Execution of the Generator
+
 But this is only half the story. Now **we need a way to execute its body**. 
 
 We need a function that can control the iterator of this generator function to 
@@ -112,22 +114,12 @@ We need a function that can control the iterator of this generator function to
 2. proceeds once it resolves (or rejects). 
 
 It sounds complicated, but takes only a few lines to implement.
-Heres is a [solution](example.js):
+
+Write the `runner` function:
 
 ```js
 function runner(genFun, arg) {
-   const itr = genFun(arg);
-
-   function run(arg) {
-      const result = itr.next(arg);
-
-      if (result.done) 
-        return result.value;
-      else
-        return Promise.resolve(result.value).then(run)
-   }
-
-   return run;
+   // ... your code here
 }
 
 const doIt = runner(init, 3);
@@ -142,6 +134,8 @@ Now, when we run it, we obtain:
 5
 8
 ```
+
+Heres is a [solution](example.js):
 
 ## See
 
