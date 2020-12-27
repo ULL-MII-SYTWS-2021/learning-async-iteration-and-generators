@@ -1,5 +1,5 @@
 const fetch = require('node-fetch');
-
+// import { fetch } from "node-fetch";
 async function* fetchCommits(repo) {
     let url = `https://api.github.com/repos/${repo}/commits`;
   
