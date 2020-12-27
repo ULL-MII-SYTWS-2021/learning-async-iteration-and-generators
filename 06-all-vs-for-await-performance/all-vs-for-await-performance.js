@@ -1,7 +1,7 @@
-const fetch = function(ms, value) {
+const fetch = function(ms, value, tryreject) {
   return new Promise((resolve,reject) => {
      setTimeout(() => {
-       if (value === 2) return reject(value);
+       if (tryreject && (value === 2)) return reject(value);
        resolve(value);
      }, ms);
   });
@@ -15,33 +15,36 @@ process.on('unhandledRejection', error => {
 
 let ms = ["400", "200", "100"];
 
-const promiseAll = async () => {
-  console.time('promiseAll');
+const promiseAll = async (doreject) => {
+  console.time('promiseAll doreject'+doreject);
   try {
-    let res = await Promise.all(ms.map((s,i) => fetch(s, i)));
+    let res = await Promise.all(ms.map((s,i) => fetch(s, i, doreject)));
     console.log(res);
   } catch(e) {
     console.log('promiseAll programmed rejection')
   } finally {
-    console.timeEnd('promiseAll');
+    console.timeEnd('promiseAll doreject'+doreject);
   }
 };
 
-const forAwait = async () => {
-  console.time('forAwait')
+const forAwait = async (doreject) => {
+  console.time('forAwait doreject'+doreject)
   try {
-    for await (let data of ms.map((ms, i) => fetch(ms, i))) {
+    for await (let data of ms.map((ms, i) => fetch(ms, i, doreject))) {
       console.log(data);
     }
   } catch(e) {
     console.log('forAwait programmed rejection')
   } finally {
-    console.timeEnd('forAwait');
+    console.timeEnd('forAwait doreject'+doreject);
   }
 };
 
 
-promiseAll();
-forAwait();
+for(let doreject of [false, true]) {
+  promiseAll(doreject);
+  forAwait(doreject);
+}
+
 
 

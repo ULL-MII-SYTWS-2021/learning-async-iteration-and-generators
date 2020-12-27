@@ -1,3 +1,21 @@
+## Comparing the Performance of Promise.all with for await
+
+```
+➜  learning-async-iteration-and-generators git:(main) ✗ node 06-all-vs-for-await-performance/all-vs-for-await-performance.js
+promiseAll programmed rejection
+promiseAll dorejecttrue: 118.024ms
+unhandledRejection
+[ 0, 1, 2 ]
+promiseAll dorejectfalse: 404.030ms
+0
+1
+2
+forAwait dorejectfalse: 403.223ms
+0
+1
+forAwait programmed rejection
+forAwait dorejecttrue: 404.824ms
+```
 
 ## See
 
